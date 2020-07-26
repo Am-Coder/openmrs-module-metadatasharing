@@ -143,7 +143,7 @@ public class ImportedItem extends BaseOpenmrsObject implements Serializable, Com
 	public void setIncoming(Object incoming) {
 		Validate.notNull(incoming);
 		Validate.isTrue(classname.equals(ClassUtil.getDeproxiedClass(incoming).getName()));
-		Validate.isTrue(getUuid().equals(Handler.getUuid(incoming)));
+		Validate.isTrue((getUuid().trim()).equals(Handler.getUuid(incoming).trim()));
 		this.incoming = incoming;
 	}
 	
